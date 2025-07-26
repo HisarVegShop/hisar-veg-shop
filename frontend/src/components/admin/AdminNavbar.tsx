@@ -24,14 +24,14 @@ const AdminNavbar = ({ setShowOrderList }: Props) => {
     <nav className=" w-full bg-primary px-4 py-2 sticky top-0 z-10">
       <div className="w-full flex justify-end items-center">
         {/* <div className="text-white text-lg font-bold">Admin</div>  */}
-        <ul className="flex space-x-4 items-center  ">
+        <ul className="flex items-center  flex-col-reverse w-full sm:flex-row sm:justify-end gap-2">
           <li>
             <Autocomplete
               disablePortal
               options={options}
               popupIcon={<SearchIcon sx={{ fontSize: 20, color: "gray" }} />}
               sx={{
-                width: 200,
+                width: 300,
                 "& .MuiAutocomplete-popupIndicator": {
                   transform: "none !important", // ✅ Prevent rotation
                 },
@@ -40,14 +40,14 @@ const AdminNavbar = ({ setShowOrderList }: Props) => {
                 },
                 // bgcolor: "white",
                 "& .MuiInputBase-root": {
-                  height: 30,
-                  minHeight: 30,
+                  height: 35,
+                  minHeight: 35,
                   padding: 0,
                   fontSize: "0.875rem",
-                  borderTopLeftRadius: 15,
-                  borderTopRightRadius: 15,
-                  borderBottomLeftRadius: 15,
-                  borderBottomRightRadius: 15,
+                  borderTopLeftRadius: 17,
+                  borderTopRightRadius: 17,
+                  borderBottomLeftRadius: 17,
+                  borderBottomRightRadius: 17,
                   bgcolor: "#fff", // Tailwind white
                 },
                 "& .MuiOutlinedInput-notchedOutline": {
@@ -82,22 +82,24 @@ const AdminNavbar = ({ setShowOrderList }: Props) => {
             <img src={cartIcon} className="w-4"></img>
             <span>{totalItems}</span>
           </li> */}
-        </ul>
-        <button
-          className="ml-4 bg-red-600 text-white px-4 py-1.5 rounded-full hover:bg-red-700 transition"
-          onClick={handlePublish}
-        >
-          Publish
-        </button>
+          <div className="flex items-center gap-2 self-end">
+            <button
+              className=" bg-red-600 text-white px-4 py-1.5 rounded-full hover:bg-red-700 transition"
+              onClick={handlePublish}
+            >
+              Publish
+            </button>
 
-        <button
-          className="ml-4 bg-gray-600 text-white px-4 py-1.5 rounded-full hover:bg-gray-700 transition"
-          onClick={() => {
-            setShowOrderList(true);
-          }}
-        >
-          Orders
-        </button>
+            <button
+              className=" bg-gray-600 text-white px-4 py-1.5 rounded-full hover:bg-gray-700 transition"
+              onClick={() => {
+                setShowOrderList(true);
+              }}
+            >
+              Orders
+            </button>
+          </div>
+        </ul>
       </div>
     </nav>
   );

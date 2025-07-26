@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className=" w-full bg-primary px-4 py-2 sticky top-0 z-10">
       <div className="w-full flex justify-end items-center">
         {/* <div className="text-white text-lg font-bold">Admin</div>  */}
-        <ul className="flex space-x-4 items-center  flex-col-reverse w-full sm:flex-row sm:justify-end gap-2">
+        <ul className="flex items-center  flex-col-reverse w-full sm:flex-row sm:justify-end gap-2">
           <li>
             <Autocomplete
               disablePortal
